@@ -1,0 +1,37 @@
+
+package employee_inheritance;
+
+public class person_ {
+     private static String name;
+     private static long id;
+    
+    //constructor 
+    public person_(String name,long id)
+    {
+       this.name=name;
+       this.id=id;
+     //System.out.println("THIS IS SUPPER CLASS CONSTRUCTOR");
+    } 
+            
+
+// Varibles name
+    public void setName(String name)
+    {    this.name=name;}
+    
+    public String getName()
+    {  return name;}
+    
+    //Varibles id
+    public void setId(long id)
+    {     this.id=id;}
+    
+    public long getId()
+    {  return id;}
+    
+   //pass object as argument
+    public static void displayPerson(person_ p)
+    {
+     System.out.println("this is function to pass object as arggument");
+    
+    }
+}
