@@ -1,0 +1,187 @@
+
+package employee_inheritance;
+import java.util.Scanner; // Needed for the Scanner class
+import java.io.*;         // Needed for the File class
+public class Report {
+     public static void main(String [] arg) throws IOException{
+     
+         // Create a Scanner object for keyboard input.
+         Scanner keyboard= new Scanner(System.in); 
+         
+         System.out.println("....HOLLOW....");
+         String choice2;
+    do{            
+        Menu();
+        System.out.println("Enter your choice..");
+        int choice=keyboard.nextInt();
+                 
+        switch(choice)
+          {
+              case 1:
+                       // Get the filename.
+                      System.out.println("Enter the filename that read of them: ");
+                      String filename = keyboard.next();
+                      // Open the file.
+                       File file = new File(filename);
+                       Scanner inputFile = new Scanner(file);
+                     // Read lines from the file until no more are left.
+                    while (inputFile.hasNext())
+                     {  String name=inputFile.next();
+                        long id=inputFile.nextLong();
+                        String position=inputFile.next();
+                        String account=inputFile.nextLine();
+                        account=inputFile.nextLine();
+                        String phone=inputFile.next();
+                        double salary=inputFile.nextDouble();
+                             
+                       // Read the next name.
+                       System.out.println(name);
+                       System.out.println(id);
+                       System.out.println(position);
+                       System.out.println(account);
+                       System.out.println(phone);
+                       System.out.println(salary);
+                             
+                    } //Close the file
+                       inputFile.close();break;
+                         
+           case 2:   
+                      // Get the filename.
+                      System.out.println("Enter the filename that read of them: ");
+                      String filename1 = keyboard.next();
+                      // Open the file.
+                       File file1 = new File(filename1);
+                       Scanner inputFile1 = new Scanner(file1);
+                     // Read lines from the file until no more are left.
+                     double max=0.0;
+                     while (inputFile1.hasNext())
+                      {
+                          String name=inputFile1.next();
+                          long id=inputFile1.nextLong();
+                          String position=inputFile1.next();
+                          String account=inputFile1.nextLine();
+                          account=inputFile1.nextLine();
+                          String phone=inputFile1.next();
+                          double salary=inputFile1.nextDouble();
+                             
+                          if(salary>=max)
+                              max=salary;
+                      }
+                      System.out.println(" The Max Salary is:"+max); 
+                      // Close the file
+                       inputFile1.close();break;
+                         
+           case 3:
+                      // Get the filename.
+                      System.out.println("Enter the filename that read of them: ");
+                      String filename2 = keyboard.next();
+                      // Open the file.
+                       File file2 = new File(filename2);
+                       Scanner inputFile2 = new Scanner(file2);
+                    // Read lines from the file until no more are left.
+                    while (inputFile2.hasNext())
+                     {
+                       // Read the next name.
+                        String name=inputFile2.next();
+                        long id=inputFile2.nextLong();
+                        String position=inputFile2.next();
+                        String account=inputFile2.nextLine();
+                        account=inputFile2.nextLine();
+                        String phone=inputFile2.next();
+                        double salary=inputFile2.nextDouble();
+                             
+                        if(position.equalsIgnoreCase("Manager"))
+                          System.out.println(name);                             
+                     } // Close the file
+                       inputFile2.close();break;
+                         
+                        
+          case 4:    
+                   // Get the filename.
+                   System.out.println("Enter the filename that read of them: ");
+                   String filename3 = keyboard.next();
+                   // Open the file.
+                    File file3 = new File(filename3);
+                    Scanner inputFile3 = new Scanner(file3);
+                  // Read lines from the file until no more are left.
+                  while (inputFile3.hasNext())
+                   {
+                      // Read the next name.
+                       String name=inputFile3.next();
+                       long id=inputFile3.nextLong();
+                       String position=inputFile3.next();
+                       String account=inputFile3.nextLine();
+                       account=inputFile3.nextLine();
+                       String phone=inputFile3.next();
+                       double salary=inputFile3.nextDouble();
+                             
+                             
+                    System.out.println("Enter the name of user:");
+                    String na=keyboard.next();
+                     
+                      if(na.equalsIgnoreCase("AHMED"))
+                            System.out.println(account);
+                      else if(na.equalsIgnoreCase("MHMOUAD"))
+                            System.out.println(account);
+                      else if(na.equalsIgnoreCase("MHMOUAD"))
+                            System.out.println(account);
+                      else if(na.equalsIgnoreCase("KHALID"))
+                            System.out.println(account);
+                      else if(na.equalsIgnoreCase("IBTISAM"))
+                            System.out.println(account);                     
+                      else 
+                            System.out.println("The Name Of User is Incorrect");
+                   }  // Close the file
+                       inputFile3.close();break;
+                         
+                         
+           case 5:    
+                     // Get the filename.
+                      System.out.println("Enter the filename that read of them: ");
+                      String filename4 = keyboard.next();
+                      // Open the file.
+                       File file4 = new File(filename4);
+                       Scanner inputFile4 = new Scanner(file4);
+                
+                   while (inputFile4.hasNext())
+                    {
+                         // Read the next name.
+                         String name=inputFile4.next();
+                         long id=inputFile4.nextLong();
+                         String position=inputFile4.next();
+                         String account=inputFile4.nextLine();
+                         account=inputFile4.nextLine();
+                         String phone=inputFile4.next();
+                         double salary=inputFile4.nextDouble();
+                         
+                         if(salary>=700)
+                         {   System.out.println(name);
+                             System.out.println(salary);
+                         }
+                    } // Close the file
+                       inputFile4.close();break;
+                         
+                         
+            case 6: System.out.println("...EXIT...");break;
+                         
+            default :System.out.println("Wrong input....");
+               
+        }                
+         System.out.println("\n...ARE YOU CONTINUO(Y/N)...");
+         choice2 =keyboard.next();
+        }while(choice2.equalsIgnoreCase("y"));
+        
+     }  
+    public static void Menu()
+    {
+   
+      System.out.println("..MENU..\n1-Display all information\n2-Display the maximum salary "
+                         + "\n3-Display all employee in position manger "
+                         + "\n4-Show user name and password for specific employee name."
+                         + "\n5-Show employees that have salary greater than 200$ "
+                         + "\n6-EXIST..");
+  
+  
+    }
+      
+}
