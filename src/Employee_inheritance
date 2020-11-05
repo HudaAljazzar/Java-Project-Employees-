@@ -1,0 +1,105 @@
+
+package employee_inheritance;
+import java.util.Scanner;   // Needed for Scanner class
+import java.io.*;           // Needed for File I/O classes
+public class Employee_inheritance {
+
+ public static void main(String[] args) throws IOException{
+      Scanner input=new Scanner(System.in);
+       
+      employe user1=new employe("AHMED",547845,"Manager","25478","0597149902","huda@gmail.com","GAZA","huda8517",550.55,10.0);
+      employe user2=new employe            ("MHMOUAD",214783,"secretary","47851","059978465","mohm@htmail.com","Khan_Younes","apple12",250.25,5.0);
+      employe user3=new employe("KHALID",254763,"Teacher","247893","059247136","khal@gmail.com","RAFAH","play54",400.50,10.0);
+      employe user4=new employe("ISLAM",547022,"Bank_Manager","74851","05974831","lslam@gmail.com","dodo65","87455",700.50,20.0);
+      employe user5=new employe("IBTISAM",471124,"Manager","14892","059887634","ibtisam@gmail.com","Al-Geneina_neighborhood","jkigfd",900.50,40.0);
+    
+      String choice1;
+    do{
+          Menu();
+          System.out.println("Enter choice....");
+          int choice=input.nextInt();        
+        switch(choice)
+        {
+           case 1: System.out.println(user1.Display_all_information());
+                   System.out.println(user2.Display_all_information());
+                   System.out.println(user3.Display_all_information());
+                   System.out.println(user4.Display_all_information());
+                   System.out.println(user5.Display_all_information());break;
+       
+          case 2:  user1.setName("HANAN");
+                   user2.setId(25147);
+                   user3.setPhone("0592198195");
+                   System.out.println(user1.getName()+" "+user2.getId()+" "+user3.getPhone());
+                      break;
+               
+          case 3: System.out.println("ENTER THE FILE NAME:");
+                   String filename= input.next();
+                  //open the file 
+                  PrintWriter outputFile = new PrintWriter(filename);
+                  
+                  //write information in afile
+                  // user1
+                  outputFile.println(user1.getName());               
+                  outputFile.println(user1.getId());                  
+                  outputFile.println(user1.getPositin());  
+                  outputFile.println(user1.getAccount());
+                  outputFile.println(user1.getPhone());
+                  outputFile.println(user1.getSalary());                  
+                  //user2
+                  outputFile.println(user2.getName());               
+                  outputFile.println(user2.getId());                  
+                  outputFile.println(user2.getPositin());                 
+                  outputFile.println(user2.getAccount());
+                  outputFile.println(user2.getPhone());
+                  outputFile.println(user2.getSalary());         
+                  //user3
+                  outputFile.println(user3.getName());               
+                  outputFile.println(user3.getId());                  
+                  outputFile.println(user3.getPositin());                 
+                  outputFile.println(user3.getAccount());
+                  outputFile.println(user3.getPhone());
+                  outputFile.println(user3.getSalary());                 
+                 //user4
+                  outputFile.println(user4.getName());               
+                  outputFile.println(user4.getId());                  
+                  outputFile.println(user4.getPositin());                 
+                  outputFile.println(user4.getAccount());
+                  outputFile.println(user4.getPhone());
+                  outputFile.println(user4.getSalary());                  
+                  //user5
+                  outputFile.println(user5.getName());               
+                  outputFile.println(user5.getId());                  
+                  outputFile.println(user5.getPositin());                 
+                  outputFile.println(user5.getAccount());
+                  outputFile.println(user5.getPhone());
+                  outputFile.println(user5.getSalary());
+
+                  // Close the file.
+                  outputFile.close();
+                  System.out.println("Data written to the file.");break;
+                       
+          case 4: System.out.println("...EXIT...");break;
+          
+          default :System.out.println("Wrong input ...");       
+       
+       
+       }
+          System.out.println("\n...ARE YOU CONTINUO(Y/N)...");
+          choice1 =input.next();
+        }while(choice1.equalsIgnoreCase("y"));
+    
+    
+    
+    
+    
+    
+    }
+    public static void Menu ()  
+     {
+           System.out.println("MENU:\n1-Display_all_information\n2-update for Employee information\n"
+              + "3-Store Employee information into Employee.txt\n"
+              + "4-EXIST ");
+     }
+       
+    
+}
