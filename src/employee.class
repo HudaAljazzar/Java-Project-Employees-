@@ -1,0 +1,67 @@
+
+package employee_inheritance;
+
+public class employe extends person_ {
+    private String position,user_name,office_phone,email,address,password;
+    private double salary,salary_perHour;
+    
+   public employe(String name,long id,String p,String usre,String office,String e,String a,String pass,double s,double s_perhour)
+   { 
+     super(name,id);
+    // System.out.println("THIS IS FIRST SUB CLASS CONSTRUCTOR");
+     position=p;
+     user_name=usre;
+     office_phone=office;
+     email=e;
+     address=a;
+     salary=s;
+     salary_perHour=s_perhour;
+     password=pass;
+   }
+   public employe(String position,double salary,String address)
+   {
+     super("huda",407057199);
+     System.out.println("THIS IS SECOND SUB CLASS CONSTRUCTOR");
+     this.position= position;
+     this.salary=salary;
+     this.address=address;
+   }
+   
+   public void setPosition(String pos)
+   { position=pos; }
+   public String getPositin()
+   {  return position;}
+   
+   public void setAccount(String user_name,String password  )
+   {
+     this.user_name=user_name;
+     this.password=password;
+   }
+
+  public String getAccount()
+  { return (user_name+" "+password); }
+  
+  public void setSalary(double sall)
+  {   salary=sall; }
+  
+  public double getSalary()
+  {   return salary; } 
+
+  public void setPhone(String phn)
+  { office_phone=phn; }
+  
+  public String getPhone()
+  {   return office_phone;}
+ public double TotalSalary(int hour)
+ {
+   salary_perHour=10.0;
+   salary+=hour*salary_perHour;
+   return salary;
+ }
+ public String Display_all_information()
+ {
+   return ("NAME:"+getName()+" ID:"+getId()+" user name:"+user_name+" password:"+password+" salary:"+salary
+           +" office phone:"+office_phone+" Email:"+email+" Address:"+address
+           +" position:");
+ }
+}
